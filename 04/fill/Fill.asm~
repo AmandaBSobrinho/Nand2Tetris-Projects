@@ -73,7 +73,7 @@
 	
 	@addr
 	A=M
-	M=-1 // RAM[addr] = 0 em binário (16 bits 0)
+	M=0 // RAM[addr] = 0 em binário (16 bits 0)
 	
 	@i
 	M=M-1 // tira um da variável contadora

@@ -28,7 +28,7 @@
 	0;JMP
 	
 (LOOP2) // faz andar em 256 linhas para a tela branca
-	@32
+	@31
 	D=A
 	@i
 	M=D // i = 32
@@ -47,7 +47,7 @@
 	0;JEQ // entra no loop 4 para preencher a linha inteira de branco
 	
 (LOOP3) // faz andar em 256 linhas para a tela preta
-	@32
+	@31
 	D=A
 	@i
 	M=D // i = 32
