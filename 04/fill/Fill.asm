@@ -12,9 +12,9 @@
 	@SCREEN
 	D=A
 	@addr
-	M=D // addr = 16384 (endereço base da tela)
+	M=D-1 // addr = 16384-1 (endereço base da tela menos 1)
 	
-	@256
+	@255
 	D=A
 	@n
 	M=D // n = 256 (para as linhas)
@@ -28,7 +28,7 @@
 	0;JMP
 	
 (LOOP2) // faz andar em 256 linhas para a tela branca
-	@32
+	@31
 	D=A
 	@i
 	M=D // i = 32
@@ -40,6 +40,8 @@
 	
 	@n
 	M=M-1 // tira um da variável contadora n
+	@addr
+	M=M+1 // passa para o próximo endereço
 	
 	@LOOP4
 	0;JEQ // entra no loop 4 para preencher a linha inteira de branco
@@ -57,6 +59,8 @@
 	
 	@n
 	M=M-1 // tira um da variável contadora
+	@addr
+	M=M+1 // passa para o próximo endereço
 	
 	@LOOP5
 	0;JEQ // entra no loop 5 para preencher a linha inteira de preto
